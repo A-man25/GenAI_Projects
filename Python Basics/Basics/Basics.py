@@ -452,3 +452,170 @@ print("a ^ b =", a ^ b)
 print("~a =", ~a)
 print("a << 1 =", a << 1)
 print("a >> 1 =", a >> 1)
+
+
+# ------------------------------------------------------------
+# 9. IF ELIF ELSE STATEMENT
+# ------------------------------------------------------------
+
+# Important:
+# ==  -> checks whether VALUES are equal
+# is  -> checks whether both variables refer to the SAME OBJECT
+# in  -> checks whether a value exists inside a collection
+
+# In Python:
+# if     -> checks the first condition
+# elif   -> means "else if"
+# else   -> runs when all previous conditions are False
+
+
+# Syntax:
+#
+# if condition1:
+#     statements
+#
+# elif condition2:
+#     statements
+#
+# elif condition3:
+#     statements
+#
+# else:
+#     statements
+
+
+# Important:
+# 1. Python uses 'elif', not 'else if'.
+# 2. A colon ':' is required after if, elif, and else.
+# 3. Indentation is mandatory.
+# 4. Conditions are checked from top to bottom.
+# 5. Once one condition becomes True, Python executes that block
+#    and skips the remaining elif/else blocks.
+# 6. Parentheses around conditions are optional.
+
+a = int(input("Enter a number: "))
+b = int(input("Enter another number: "))
+
+x = [6, 4, 5, 6, 7, 8, 4]
+y = [6, 2, 3, 55, 6, 8, 3]
+
+if a in [1, 2, 3, 4, 5] and b in [6, 7, 8, 9, 10]:
+    print("a is in 1-5 and b is in 6-10")
+
+elif a in x or b in x or a in y or b in y:
+    print("Either a or b is present in x or y")
+
+elif a >= b:
+    print(f"a ({a}) is greater than or equal to b ({b})")
+
+elif a < b:
+    print(f"a ({a}) is less than b ({b})")
+
+else:
+    print("None of the conditions are satisfied")
+
+
+    
+# ------------------------------------------------------------
+# 10. MATCH CASE STATEMENTS
+# ------------------------------------------------------------
+
+month = int(input("Enter a month: "))
+
+match month:
+    case 1:
+        print("January")
+
+    case 2:
+        print("February")
+
+    case 3:
+        print("March")
+
+    case 4:
+        print("April")
+
+    case 5:
+        print("May")
+
+    case 6:
+        print("June")
+
+    case 7:
+        print("July")
+
+    case 8:
+        print("August")
+
+    case 9:
+        print("September")
+
+    case 10:
+        print("October")
+
+    case 11:
+        print("November")
+
+    case 12:
+        print("December")
+
+    case _:
+        print("Invalid month")
+
+# ------------------------------------------------------------
+# 11. FOR LOOPs
+# ------------------------------------------------------------
+# Syntax 
+#   for variable in iterable:
+#         statements
+# no () {}
+
+# Basic For Loop
+for i in range(5):
+    print(i)
+
+# For loop start and end
+for i in range(5, 10):
+    print(i)
+
+# For loop start, end and step Size
+for i in range(2,40,2):
+    print(i)
+
+# For loop on a list 
+fruits = ["Bananna", "Mango", "Apple", "Papaya", "Strawberry"]
+for this_fruit in fruits:
+    print(this_fruit)
+
+# For loop on a list with index 
+n_fruits = len(fruits)
+for n in range(n_fruits):
+    if(fruits[n] == "Apple"):
+        print(f"Apple is in index: {n}")
+        break
+
+    print(f"Index: {n} fruit: {fruits[n]}")
+
+
+# For loop using enumerate 
+# Use enumerate() when you need both index and value 
+
+for index, val in enumerate(fruits):
+    print(index, val)
+
+# ------------------------------------------------------------
+# 12. WHILE LOOP
+# ------------------------------------------------------------
+# Syntax:
+# while condition:
+#     statements
+
+fruit = input("Enter a fruit: ")
+
+while fruit in fruits:
+    print(f"{fruit} is already in the list")
+    fruit = input("Enter another fruit: ")
+
+while i <= 10:
+    print(i)
+    i+=1
