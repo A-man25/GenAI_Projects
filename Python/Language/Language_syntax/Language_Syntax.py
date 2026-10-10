@@ -1,11 +1,19 @@
-# ============================================================
-# BASIC PYTHON - NOTES & PRACTICE
-# ============================================================
+# ============================================================================
+#                       BASIC PYTHON - NOTES & PRACTICE
+# ============================================================================
+
+print("\n" + "=" * 72)
+print("                 BASIC PYTHON - NOTES & PRACTICE")
+print("=" * 72)
 
 
-# ------------------------------------------------------------
+# ----------------------------------------------------------------------------
 # 1. FIRST PYTHON PROGRAM
-# ------------------------------------------------------------
+# ----------------------------------------------------------------------------
+
+print("\n" + "-" * 72)
+print("1. FIRST PYTHON PROGRAM")
+print("-" * 72)
 
 print("Welcome to Python")
 
@@ -14,237 +22,187 @@ print("Welcome to Python")
 # It is used to define blocks of code.
 
 
-# ------------------------------------------------------------
+# ----------------------------------------------------------------------------
 # 2. VARIABLES AND BASIC DATA TYPES
-# ------------------------------------------------------------
+# ----------------------------------------------------------------------------
+
+print("\n" + "-" * 72)
+print("2. VARIABLES AND BASIC DATA TYPES")
+print("-" * 72)
 
 # Python supports several built-in data types:
-#
 # int   -> Whole numbers
 #          Example: 10, -5
-#
 # float -> Decimal numbers
 #          Example: 3.14, -0.001
-#
 # str   -> Text enclosed in quotes
 #          Example: "Hello", 'Python'
-#
 # bool  -> True or False
-#
 # list  -> Ordered, mutable collection
 #          Example: [1, 2, 3]
-#
 # tuple -> Ordered, immutable collection
 #          Example: (1, 2, 3)
-#
 # set   -> Unordered collection of unique elements
 #          Example: {1, 2, 3}
-#
 # dict  -> Key-value pairs
 #          Example: {"name": "Alice", "age": 25}
 
-
 # Integer
 num = 1
-
-print(num)
-print(type(num))
-
+print(f"Integer value  : {num}")
+print(f"Type           : {type(num)}")
 
 # String
 string_value = "This is a string"
-
-print(string_value)
-print(type(string_value))
-
+print(f"\nString value   : {string_value}")
+print(f"Type           : {type(string_value)}")
 
 # Python does NOT have a separate char data type.
 # A single character is simply a string of length 1.
-
 char_value = "a"
-
-print(char_value)
-print(type(char_value))
-
+print(f"\nCharacter      : {char_value}")
+print(f"Type           : {type(char_value)}")
 
 # Boolean
-# Boolean values must use capital T and F:
-# True
-# False
-
+# Boolean values must use capital T and F: True / False
 bool_value = True
-
-print(bool_value)
-print(type(bool_value))
-
+print(f"\nBoolean value  : {bool_value}")
+print(f"Type           : {type(bool_value)}")
 
 # Float
 float_value = 4.5
+print(f"\nFloat value    : {float_value}")
+print(f"Type           : {type(float_value)}")
 
-print(float_value)
-print(type(float_value))
 
-
-# ------------------------------------------------------------
+# ----------------------------------------------------------------------------
 # 3. TYPE CASTING
-# ------------------------------------------------------------
+# ----------------------------------------------------------------------------
+
+print("\n" + "-" * 72)
+print("3. TYPE CASTING")
+print("-" * 72)
 
 # Common type casting functions:
-#
 # int()
 # float()
 # str()
 # bool()
 
-
 x = "20"
 y = 5
 
+print(f"Before casting : x = {x}, type = {type(x)}")
 x = int(x)
-
-print(x + y)
-print(type(x + y))
-
+print(f"After casting  : x = {x}, type = {type(x)}")
+print(f"x + y          : {x + y}")
 
 # Converting float to int
-
 x = 8.9
+print(f"\nint(8.9)       : {int(x)}")
 
-print(int(x))
-
-# Output:
-# 8
-#
 # int() does NOT round the number.
-# It simply removes/truncates the decimal part.
-
+# It truncates the decimal part for positive values.
 
 # Converting string to bool
-
 x = "False"
 y = bool(x)
+print(f'bool("False")  : {y}')
 
-print(y)
-
-# Output:
-# True
-#
 # Why?
 # bool() checks whether the string is empty.
-#
-# Empty string:
-# bool("") -> False
-#
-# Non-empty string:
+# bool("")      -> False
 # bool("False") -> True
 # bool("Hello") -> True
 
 
-# ------------------------------------------------------------
+# ----------------------------------------------------------------------------
 # 4. USER INPUT
-# ------------------------------------------------------------
+# ----------------------------------------------------------------------------
 
-# input() is used to take input from the user.
-#
-# Important:
+print("\n" + "-" * 72)
+print("4. USER INPUT")
+print("-" * 72)
+
 # input() always returns a string.
-
-x = input("Enter a number: ")
-
-print(x)
-print(type(x))
-
+x = input("Enter any value: ")
+print(f"You entered    : {x}")
+print(f"Input type     : {type(x)}")
 
 # If we want the input as an integer:
-
-number = int(input("Enter another number: "))
-
-print(number)
-print(type(number))
+number = int(input("Enter an integer: "))
+print(f"Integer value  : {number}")
+print(f"Integer type   : {type(number)}")
 
 
-# ------------------------------------------------------------
+# ----------------------------------------------------------------------------
 # 5. BASIC IF STATEMENT
-# ------------------------------------------------------------
+# ----------------------------------------------------------------------------
+
+print("\n" + "-" * 72)
+print("5. BASIC IF STATEMENT")
+print("-" * 72)
 
 a = 5
 b = 67
 
-if a < b:
-    print(a)
+print(f"a = {a}, b = {b}")
 
-# Parentheses are not required:
-#
-# if (a < b):
-#
-# works, but Python usually prefers:
-#
+if a < b:
+    print("Condition a < b is True")
+    print(f"Smaller value  : {a}")
+
+# Parentheses are not required.
+# if (a < b): works, but Python style usually prefers:
 # if a < b:
 
 
-# ------------------------------------------------------------
+# ----------------------------------------------------------------------------
 # 6. PRINT SEPARATOR - sep
-# ------------------------------------------------------------
+# ----------------------------------------------------------------------------
+
+print("\n" + "-" * 72)
+print("6. PRINT SEPARATOR - sep")
+print("-" * 72)
 
 # By default, print() separates multiple values using a space.
-
-print("Hello", "Aman")
-
-# Output:
-# Hello Aman
-
+print("Default        :", "Hello", "Aman")
 
 # We can change the separator using sep.
-
-print("Hello", "Aman", sep=":")
-
-# Output:
-# Hello:Aman
+print("Colon          :", "Hello", "Aman", sep=":")
+print("Languages      :", "Python", "C++", "AI", sep=" | ")
 
 
-print("Python", "C++", "AI", sep=" | ")
-
-# Output:
-# Python | C++ | AI
-
-
-# ------------------------------------------------------------
+# ----------------------------------------------------------------------------
 # 7. PRINT END - end
-# ------------------------------------------------------------
+# ----------------------------------------------------------------------------
 
-# By default, print() ends with:
-#
-# \n
-#
-# which means "new line".
+print("\n" + "-" * 72)
+print("7. PRINT END - end")
+print("-" * 72)
 
+# By default, print() ends with \n (new line).
+print("Default output:")
 print("Hello")
 print("Aman")
 
-# Output:
-# Hello
-# Aman
-
-
-# We can change this using end.
-
+print("\nUsing end=' ':")
 print("Hello", end=" ")
 print("Aman")
 
-# Output:
-# Hello Aman
-
-
+print("\nUsing custom end:")
 print("A", end=" -> ")
 print("B", end=" -> ")
 print("C")
 
-# Output:
-# A -> B -> C 
 
-# ------------------------------------------------------------
-# 7 PYTHON REPL
-# ------------------------------------------------------------
+# ----------------------------------------------------------------------------
+# 8. PYTHON REPL
+# ----------------------------------------------------------------------------
+
+print("\n" + "-" * 72)
+print("8. PYTHON REPL")
+print("-" * 72)
 
 # REPL stands for:
 # Read - Eval - Print - Loop
@@ -263,359 +221,322 @@ print("C")
 # To enter the Python REPL from the terminal:
 # python
 #
-# When we see:
-# >>>
-# it means we are currently inside the Python REPL.
+# When we see >>> it means we are inside the Python REPL.
 #
-# Difference:
-# REPL            -> Used for quick testing and experiments.
-# Python .py file -> Used to write and run complete programs.
+# REPL            -> Quick testing and experiments
+# Python .py file -> Complete programs
 #
 # To run a Python file:
 # python Basics.py
 
+print("REPL = Read - Eval - Print - Loop")
+print("Use it for quick experiments in the terminal.")
 
-# ------------------------------------------------------------
-# 8. OPERATORS
-# ------------------------------------------------------------
+
+# ----------------------------------------------------------------------------
+# 9. OPERATORS
+# ----------------------------------------------------------------------------
+
+print("\n" + "-" * 72)
+print("9. OPERATORS")
+print("-" * 72)
 
 a = 34
 b = 2
 
+# ------------------------- ARITHMETIC OPERATORS -------------------------------
 
-# ------------------------------------------------------------
-# ARITHMETIC OPERATORS
-# ------------------------------------------------------------
+print("\n[Arithmetic Operators]")
+print(f"a = {a}, b = {b}")
+print(f"a + b  = {a + b:<8} -> Addition")
+print(f"a - b  = {a - b:<8} -> Subtraction")
+print(f"a * b  = {a * b:<8} -> Multiplication")
+print(f"a / b  = {a / b:<8} -> Division")
+print(f"a % b  = {a % b:<8} -> Modulo / remainder")
+print(f"a // b = {a // b:<8} -> Floor division")
+print(f"a ** b = {a ** b:<8} -> Exponentiation")
 
-# Arithmetic operators are used to perform mathematical operations.
-
-print("a + b =", a + b, "-> Addition operator")
-print("a - b =", a - b, "-> Subtraction operator")
-print("a * b =", a * b, "-> Multiplication operator")
-print("a / b =", a / b, "-> Division operator")
-print("a % b =", a % b, "-> Modulo operator - gives the remainder")
-print("a // b =", a // b, "-> Floor division operator")
-print("a ** b =", a ** b, "-> Exponentiation operator")
-
-# Example:
-# 34 / 2  -> 17.0
 # Normal division always returns a float.
-#
-# 34 // 2 -> 17
-# Floor division removes the decimal/fractional part by rounding down.
-#
-# 34 % 2  -> 0
+# Floor division rounds down to the nearest integer result.
 # Modulo gives the remainder.
-#
-# 34 ** 2 -> 1156
-# Means 34 raised to the power 2.
+# Exponentiation means raising a number to a power.
 
+# ------------------------- COMPARISON OPERATORS -------------------------------
 
-# ------------------------------------------------------------
-# COMPARISON OPERATORS
-# ------------------------------------------------------------
+print("\n[Comparison Operators]")
+print(f"a == b : {a == b}")
+print(f"a != b : {a != b}")
+print(f"a > b  : {a > b}")
+print(f"a < b  : {a < b}")
+print(f"a >= b : {a >= b}")
+print(f"a <= b : {a <= b}")
 
-# Comparison operators compare two values.
-# They always return either True or False.
+# ------------------------- ASSIGNMENT OPERATORS -------------------------------
 
-print("a == b :", a == b)   # Equal to
-print("a != b :", a != b)   # Not equal to
-print("a > b  :", a > b)    # Greater than
-print("a < b  :", a < b)    # Less than
-print("a >= b :", a >= b)   # Greater than or equal to
-print("a <= b :", a <= b)   # Less than or equal to
+print("\n[Assignment Operators]")
+x = 10
+print(f"Initial x : {x}")
 
+x += 5
+print(f"x += 5    : {x}")
 
-# ------------------------------------------------------------
-# ASSIGNMENT OPERATORS
-# ------------------------------------------------------------
+x -= 3
+print(f"x -= 3    : {x}")
 
-# Assignment operators are used to assign or update values.
+x *= 2
+print(f"x *= 2    : {x}")
+
+x /= 4
+print(f"x /= 4    : {x}")
+
+x %= 3
+print(f"x %= 3    : {x}")
 
 x = 10
-
-print("Initial x =", x)
-
-x += 5      # Same as: x = x + 5
-print("x += 5 :", x)
-
-x -= 3      # Same as: x = x - 3
-print("x -= 3 :", x)
-
-x *= 2      # Same as: x = x * 2
-print("x *= 2 :", x)
-
-x /= 4      # Same as: x = x / 4
-print("x /= 4 :", x)
-
-x %= 3      # Same as: x = x % 3
-print("x %= 3 :", x)
-
-x = 10
-x //= 3     # Same as: x = x // 3
-print("x //= 3 :", x)
+x //= 3
+print(f"x //= 3   : {x}")
 
 x = 2
-x **= 3     # Same as: x = x ** 3
-print("x **= 3 :", x)
+x **= 3
+print(f"x **= 3   : {x}")
 
+# --------------------------- LOGICAL OPERATORS -------------------------------
 
-# ------------------------------------------------------------
-# LOGICAL OPERATORS
-# ------------------------------------------------------------
+print("\n[Logical Operators]")
+age = 25
+has_license = True
 
-# Logical operators are used to combine conditions.
-#
+print(f"age >= 18 and has_license : {age >= 18 and has_license}")
+print(f"age < 18 or has_license   : {age < 18 or has_license}")
+print(f"not has_license           : {not has_license}")
+
 # and -> True only when BOTH conditions are True.
 # or  -> True when AT LEAST ONE condition is True.
 # not -> Reverses the Boolean value.
 
-age = 25
-has_license = True
+# -------------------------- MEMBERSHIP OPERATORS ------------------------------
 
-print(age >= 18 and has_license)
-# True because both conditions are True.
-
-print(age < 18 or has_license)
-# True because at least one condition is True.
-
-print(not has_license)
-# False because has_license is True and 'not' reverses it.
-
-
-# ------------------------------------------------------------
-# MEMBERSHIP OPERATORS
-# ------------------------------------------------------------
-
-# Membership operators check whether a value exists
-# inside a sequence such as a string, list, tuple, etc.
-#
-# in
-# not in
-
+print("\n[Membership Operators]")
 name = "Aman"
-
-print("A" in name)          # True
-print("z" in name)          # False
-print("z" not in name)      # True
-
 numbers = [10, 20, 30, 40]
 
-print(20 in numbers)        # True
-print(100 not in numbers)   # True
+print(f'"A" in name          : {"A" in name}')
+print(f'"z" in name          : {"z" in name}')
+print(f'"z" not in name      : {"z" not in name}')
+print(f"20 in numbers        : {20 in numbers}")
+print(f"100 not in numbers   : {100 not in numbers}")
 
+# --------------------------- IDENTITY OPERATORS -------------------------------
 
-# ------------------------------------------------------------
-# IDENTITY OPERATORS
-# ------------------------------------------------------------
-
-# Identity operators check whether two variables refer to
-# the SAME object in memory.
-#
-# is
-# is not
-#
-# IMPORTANT:
-# == checks if VALUES are equal.
-# is checks if they are the SAME object.
-
+print("\n[Identity Operators]")
 x = [1, 2, 3]
 y = [1, 2, 3]
 z = x
 
-print(x == y)      # True  -> values are equal
-print(x is y)      # False -> different objects
-print(x is z)      # True  -> same object
+print(f"x == y      : {x == y}   -> Values are equal")
+print(f"x is y      : {x is y}  -> Different objects")
+print(f"x is z      : {x is z}   -> Same object")
+print(f"x is not y  : {x is not y}")
 
-print(x is not y)  # True
+# == checks whether VALUES are equal.
+# is checks whether both variables refer to the SAME object.
 
+# ---------------------------- BITWISE OPERATORS -------------------------------
 
-# ------------------------------------------------------------
-# BITWISE OPERATORS
-# ------------------------------------------------------------
-
-# Bitwise operators work on the binary representation of numbers.
-#
-# &  -> AND
-# |  -> OR
-# ^  -> XOR
-# ~  -> NOT
-# << -> Left Shift
-# >> -> Right Shift
-
+print("\n[Bitwise Operators]")
 a = 5      # Binary: 0101
 b = 3      # Binary: 0011
 
-print("a & b =", a & b)
-print("a | b =", a | b)
-print("a ^ b =", a ^ b)
-print("~a =", ~a)
-print("a << 1 =", a << 1)
-print("a >> 1 =", a >> 1)
+print(f"a & b  = {a & b}")
+print(f"a | b  = {a | b}")
+print(f"a ^ b  = {a ^ b}")
+print(f"~a     = {~a}")
+print(f"a << 1 = {a << 1}")
+print(f"a >> 1 = {a >> 1}")
 
 
-# ------------------------------------------------------------
-# 9. IF ELIF ELSE STATEMENT
-# ------------------------------------------------------------
+# ----------------------------------------------------------------------------
+# 10. IF - ELIF - ELSE STATEMENT
+# ----------------------------------------------------------------------------
 
-# Important:
-# ==  -> checks whether VALUES are equal
-# is  -> checks whether both variables refer to the SAME OBJECT
-# in  -> checks whether a value exists inside a collection
-
-# In Python:
-# if     -> checks the first condition
-# elif   -> means "else if"
-# else   -> runs when all previous conditions are False
-
-
-# Syntax:
-#
-# if condition1:
-#     statements
-#
-# elif condition2:
-#     statements
-#
-# elif condition3:
-#     statements
-#
-# else:
-#     statements
-
+print("\n" + "-" * 72)
+print("10. IF - ELIF - ELSE STATEMENT")
+print("-" * 72)
 
 # Important:
-# 1. Python uses 'elif', not 'else if'.
-# 2. A colon ':' is required after if, elif, and else.
-# 3. Indentation is mandatory.
-# 4. Conditions are checked from top to bottom.
-# 5. Once one condition becomes True, Python executes that block
-#    and skips the remaining elif/else blocks.
-# 6. Parentheses around conditions are optional.
+# == -> checks whether VALUES are equal
+# is -> checks whether both variables refer to the SAME OBJECT
+# in -> checks whether a value exists inside a collection
+#
+# if   -> checks the first condition
+# elif -> means "else if"
+# else -> runs when all previous conditions are False
+#
+# Conditions are checked from top to bottom.
+# Once one condition is True, the remaining elif/else blocks are skipped.
 
-a = int(input("Enter a number: "))
-b = int(input("Enter another number: "))
+first_number = int(input("Enter a number: "))
+second_number = int(input("Enter another number: "))
 
-x = [6, 4, 5, 6, 7, 8, 4]
-y = [6, 2, 3, 55, 6, 8, 3]
+x_values = [6, 4, 5, 6, 7, 8, 4]
+y_values = [6, 2, 3, 55, 6, 8, 3]
 
-if a in [1, 2, 3, 4, 5] and b in [6, 7, 8, 9, 10]:
-    print("a is in 1-5 and b is in 6-10")
+if first_number in [1, 2, 3, 4, 5] and second_number in [6, 7, 8, 9, 10]:
+    print("Result: first number is in 1-5 and second number is in 6-10")
 
-elif a in x or b in x or a in y or b in y:
-    print("Either a or b is present in x or y")
+elif (
+    first_number in x_values
+    or second_number in x_values
+    or first_number in y_values
+    or second_number in y_values
+):
+    print("Result: at least one number is present in x_values or y_values")
 
-elif a >= b:
-    print(f"a ({a}) is greater than or equal to b ({b})")
+elif first_number >= second_number:
+    print(
+        f"Result: first number ({first_number}) is greater than or equal to "
+        f"second number ({second_number})"
+    )
 
-elif a < b:
-    print(f"a ({a}) is less than b ({b})")
+elif first_number < second_number:
+    print(
+        f"Result: first number ({first_number}) is less than "
+        f"second number ({second_number})"
+    )
 
 else:
-    print("None of the conditions are satisfied")
+    print("Result: none of the conditions were satisfied")
 
 
-    
-# ------------------------------------------------------------
-# 10. MATCH CASE STATEMENTS
-# ------------------------------------------------------------
+# ----------------------------------------------------------------------------
+# 11. MATCH CASE STATEMENTS
+# ----------------------------------------------------------------------------
 
-month = int(input("Enter a month: "))
+print("\n" + "-" * 72)
+print("11. MATCH CASE STATEMENTS")
+print("-" * 72)
+
+month = int(input("Enter a month number (1-12): "))
 
 match month:
     case 1:
-        print("January")
-
+        print("Month: January")
     case 2:
-        print("February")
-
+        print("Month: February")
     case 3:
-        print("March")
-
+        print("Month: March")
     case 4:
-        print("April")
-
+        print("Month: April")
     case 5:
-        print("May")
-
+        print("Month: May")
     case 6:
-        print("June")
-
+        print("Month: June")
     case 7:
-        print("July")
-
+        print("Month: July")
     case 8:
-        print("August")
-
+        print("Month: August")
     case 9:
-        print("September")
-
+        print("Month: September")
     case 10:
-        print("October")
-
+        print("Month: October")
     case 11:
-        print("November")
-
+        print("Month: November")
     case 12:
-        print("December")
-
+        print("Month: December")
     case _:
-        print("Invalid month")
+        print("Invalid month number")
 
-# ------------------------------------------------------------
-# 11. FOR LOOPs
-# ------------------------------------------------------------
-# Syntax 
-#   for variable in iterable:
-#         statements
-# no () {}
 
-# Basic For Loop
+# ----------------------------------------------------------------------------
+# 12. FOR LOOPS
+# ----------------------------------------------------------------------------
+
+print("\n" + "-" * 72)
+print("12. FOR LOOPS")
+print("-" * 72)
+
+# Syntax:
+# for variable in iterable:
+#     statements
+#
+# Python does not use () or {} around the for-loop block.
+
+print("\n[Basic for loop: range(5)]")
 for i in range(5):
-    print(i)
+    print(i, end=" ")
+print()
 
-# For loop start and end
+print("\n[Start and end: range(5, 10)]")
 for i in range(5, 10):
-    print(i)
+    print(i, end=" ")
+print()
 
-# For loop start, end and step Size
-for i in range(2,40,2):
-    print(i)
+print("\n[Start, end and step: range(2, 40, 2)]")
+for i in range(2, 40, 2):
+    print(i, end=" ")
+print()
 
-# For loop on a list 
-fruits = ["Bananna", "Mango", "Apple", "Papaya", "Strawberry"]
+# For loop on a list
+fruits = ["Banana", "Mango", "Apple", "Papaya", "Strawberry"]
+
+print("\n\n[Looping directly through a list]")
 for this_fruit in fruits:
-    print(this_fruit)
+    print(f"- {this_fruit}")
 
-# For loop on a list with index 
+# For loop on a list with index
+print("\n[Looping using range(len(...))]")
 n_fruits = len(fruits)
+
 for n in range(n_fruits):
-    if(fruits[n] == "Apple"):
-        print(f"Apple is in index: {n}")
+    print(f"Index {n}: {fruits[n]}")
+
+    if fruits[n] == "Apple":
+        print(f"Apple found at index {n}. Stopping this loop.")
         break
 
-    print(f"Index: {n} fruit: {fruits[n]}")
+# For loop using enumerate
+print("\n[Looping using enumerate()]")
+print("enumerate() gives both index and value.")
+
+for index, value in enumerate(fruits):
+    print(f"Index {index}: {value}")
 
 
-# For loop using enumerate 
-# Use enumerate() when you need both index and value 
+# ----------------------------------------------------------------------------
+# 13. WHILE LOOP
+# ----------------------------------------------------------------------------
 
-for index, val in enumerate(fruits):
-    print(index, val)
+print("\n" + "-" * 72)
+print("13. WHILE LOOP")
+print("-" * 72)
 
-# ------------------------------------------------------------
-# 12. WHILE LOOP
-# ------------------------------------------------------------
 # Syntax:
 # while condition:
 #     statements
 
+print("\n[Fruit check using while]")
 fruit = input("Enter a fruit: ")
 
 while fruit in fruits:
-    print(f"{fruit} is already in the list")
+    print(f'"{fruit}" is already in the list.')
     fruit = input("Enter another fruit: ")
 
+print(f'"{fruit}" is not in the list, so the loop stopped.')
+
+print("\n[Basic counter using while]")
+i = 1
+
 while i <= 10:
-    print(i)
-    i+=1
+    print(i, end=" ")
+    i += 1
+
+print()
+
+
+# ============================================================================
+#                              END OF PROGRAM
+# ============================================================================
+
+print("\n" + "=" * 72)
+print("                     BASIC PYTHON RUN COMPLETE")
+print("=" * 72 + "\n")
